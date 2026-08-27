@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Your Account — Earshot</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: #1a1a1a;
+      background: #f9f8f6;
+      padding: 2rem 1rem 4rem;
+    }
+    .wrap { max-width: 680px; margin: 0 auto; }
+    header { margin-bottom: 2.5rem; }
+    h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.25rem; }
+    .subtitle { color: #666; font-size: 1rem; margin-top: 0.5rem; }
+    h2 { font-size: 1.1rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
+    p, li { color: #333; margin-bottom: 0.75rem; }
+    ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    .step-block {
+      background: #fff;
+      border: 1.5px solid #e0ddd8;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .step-num { font-size: 0.75rem; font-weight: 700; color: #3D6B57; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+    .step-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; }
+    .step-desc { color: #555; font-size: 0.9rem; margin: 0; }
+    .warning {
+      background: #fff3f3;
+      border-left: 4px solid #c0392b;
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .warning p { color: #7b2b22; margin: 0; font-size: 0.9rem; }
+    .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    @media (max-width: 480px) { .choice-grid { grid-template-columns: 1fr; } }
+    .choice-card { background: #fff; border: 1.5px solid #e0ddd8; border-radius: 12px; padding: 1rem 1.25rem; }
+    .choice-card strong { display: block; margin-bottom: 0.25rem; }
+    .choice-card p { color: #666; font-size: 0.875rem; margin: 0; }
+    .contact { margin-top: 2.5rem; padding: 1.25rem; background: #eceae4; border-radius: 10px; }
+    .contact p { margin: 0 0 0.25rem; }
+    a { color: #3D6B57; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Delete Your Account</h1>
+      <p class="subtitle">How to permanently remove your Earshot account and data.</p>
+    </header>
+
+    <div class="warning">
+      <p><strong>This action is permanent.</strong> Deleting your account cannot be undone. Your sign-in link (Apple or Google) will be removed and cannot be restored.</p>
+    </div>
+
+    <h2>In-app deletion (recommended)</h2>
+    <p>Account deletion is available directly inside the app:</p>
+
+    <div class="step-block">
+      <div class="step-num">Step 1</div>
+      <div class="step-title">Open the You tab</div>
+      <p class="step-desc">Tap the "You" tab at the bottom of the app. You must be signed in.</p>
+    </div>
+    <div class="step-block">
+      <div class="step-num">Step 2</div>
+      <div class="step-title">Tap "Delete account"</div>
+      <p class="step-desc">Scroll to the bottom of the You tab and tap "Delete account".</p>
+    </div>
+    <div class="step-block">
+      <div class="step-num">Step 3</div>
+      <div class="step-title">Choose what happens to your clips</div>
+      <p class="step-desc">Pick one of the two options before confirming:</p>
+    </div>
+
+    <div class="choice-grid">
+      <div class="choice-card">
+        <strong>Keep clips for the neighbourhood</strong>
+        <p>Your recordings stay published, re-attributed to "a neighbour" instead of your handle.</p>
+      </div>
+      <div class="choice-card">
+        <strong>Delete my clips too</strong>
+        <p>Every clip you recorded is permanently removed along with your account.</p>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-num">Step 4</div>
+      <div class="step-title">Type "delete" and confirm</div>
+      <p class="step-desc">Type the word <em>delete</em> in the confirmation field, then tap "Permanently delete my account". The deletion runs immediately.</p>
+    </div>
+
+    <h2>What gets deleted</h2>
+    <ul>
+      <li>Your account record and sign-in link (Apple or Google)</li>
+      <li>Your display handle and profile information</li>
+      <li>Your clips (if you chose "delete my clips too")</li>
+      <li>Any reports or blocks associated with your account</li>
+    </ul>
+    <p>Cached files on your device are also cleared when you delete.</p>
+
+    <h2>Can't access the app?</h2>
+    <p>
+      If you no longer have access to the app or can't sign in, email us and we'll delete your
+      account manually. Include the email address or Apple/Google account you used to sign in.
+    </p>
+
+    <div class="contact">
+      <p><strong>Contact:</strong> <a href="mailto:aishkumar97@gmail.com">aishkumar97@gmail.com</a></p>
+      <p style="color:#666; font-size:0.875rem; margin-top:0.5rem;">
+        Also see our <a href="privacy.html">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
