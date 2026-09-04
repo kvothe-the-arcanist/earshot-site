@@ -8,9 +8,15 @@
     (function () {
       var clip = new URLSearchParams(window.location.search).get("clip");
       if (!clip) return;
-      // Hand off to the app if installed. If not, the user stays on this page
-      // and the App Store / Play Store links below serve as the fallback.
-      window.location.href = "earshot://clip/" + clip;
+      // Wait for the page to paint before attempting the custom scheme.
+      // Firing window.location before paint causes iOS to cancel the page
+      // load if the scheme is unrecognised — the user would see a blank page
+      // instead of the download CTAs.
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          window.location.href = "earshot://clip/" + clip;
+        }, 50);
+      });
     })();
   </script>
   <meta name="description" content="A walking app that plays voices from the exact spot where someone stood and had something to say.">
