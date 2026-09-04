@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>earshot</title>
   <script>
-    (function () {
+    document.addEventListener("DOMContentLoaded", function () {
       var clip = new URLSearchParams(window.location.search).get("clip");
       if (!clip) return;
-      // Wait for the page to paint before attempting the custom scheme.
-      // Firing window.location before paint causes iOS to cancel the page
-      // load if the scheme is unrecognised — the user would see a blank page
-      // instead of the download CTAs.
-      document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(function () {
-          window.location.href = "earshot://clip/" + clip;
-        }, 50);
-      });
-    })();
+      // Auto-navigation to custom URL schemes is blocked without a user gesture
+      // on both iOS Safari and Android Chrome. Show a tappable banner instead.
+      var banner = document.getElementById("clip-banner");
+      var link = document.getElementById("clip-link");
+      if (banner && link) {
+        link.href = "earshot://clip/" + clip;
+        banner.style.display = "flex";
+      }
+    });
   </script>
   <meta name="description" content="A walking app that plays voices from the exact spot where someone stood and had something to say.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -292,9 +291,38 @@
     }
     footer a:hover { color: var(--ink); }
     .copy { opacity: .45; }
+
+    #clip-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--ink);
+      color: var(--ground);
+      padding: 14px 24px;
+      font-size: 15px;
+    }
+    #clip-banner p { opacity: .75; font-size: 14px; }
+    #clip-link {
+      display: inline-block;
+      background: var(--patina);
+      color: #fff;
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: 9px;
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
+
+<div id="clip-banner">
+  <p>someone shared an earshot clip with you</p>
+  <a id="clip-link" href="">open in earshot</a>
+</div>
 
 <nav>
   <svg width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
