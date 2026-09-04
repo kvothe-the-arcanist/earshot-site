@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>earshot</title>
+  <script>
+    (function () {
+      var clip = new URLSearchParams(window.location.search).get("clip");
+      if (!clip) return;
+      // Hand off to the app if installed. If not, the user stays on this page
+      // and the App Store / Play Store links below serve as the fallback.
+      window.location.href = "earshot://clip/" + clip;
+    })();
+  </script>
   <meta name="description" content="A walking app that plays voices from the exact spot where someone stood and had something to say.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
