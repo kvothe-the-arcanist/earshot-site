@@ -13,7 +13,13 @@
       var banner = document.getElementById("clip-banner");
       var link = document.getElementById("clip-link");
       if (banner && link) {
-        link.href = "earshot://clip/" + clip;
+        var isAndroid = /android/i.test(navigator.userAgent);
+        if (isAndroid) {
+          var fallback = encodeURIComponent("https://play.google.com/store/apps/details?id=dev.earshot.app");
+          link.href = "intent://clip/" + clip + "#Intent;scheme=earshot;package=dev.earshot.app;S.browser_fallback_url=" + fallback + ";end";
+        } else {
+          link.href = "earshot://clip/" + clip;
+        }
         banner.style.display = "flex";
       }
     });
